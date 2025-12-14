@@ -6,10 +6,15 @@
 #include <stdbool.h>
 #include <stdio.h>
 
+typedef enum	e_type t_type;
+typedef struct	s_val t_val;
+
 #include "io.h"
 #include "parse.h"
 
-#define CHARSET "abcdefABCDEF"
+#define MAXARG	10
+#define MAXSIZE	128
+#define CHARSET	"abcdefABCDEF"
 
 
 typedef enum e_type
@@ -26,4 +31,5 @@ typedef struct s_val
 	t_type		type;
 	struct s_val	*next;
 }	t_val;
+
 #endif

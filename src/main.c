@@ -10,11 +10,15 @@ int	main(int ac, char **av)
 	}
 	else
 	{
+		if (ac > MAXARG)
+			return (0);
 		// Input Validation
 		// parse
+		// L	Type detection
+		// 	tokenization	
 		// main loop
 		if (input_validation(++av) == 0)
-			fprintf(stdout, "Valid\n");
+			parse(av);
 		else
 			fprintf(stdout, "Wrong\n");
 	}
