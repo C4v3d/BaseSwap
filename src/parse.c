@@ -1,7 +1,8 @@
 #include "../include/baseswap.h"
 #include <stdlib.h>
+#include <string.h>
 
-t_val	*new_node(char *s)
+static t_val	*new_node(char *s)
 {
 	t_val	*n;
 
@@ -9,13 +10,13 @@ t_val	*new_node(char *s)
 	if (!n)
 		return (NULL);
 	n->len = strlen(s);
-	// n->type = get_type(s);
+	n->type = get_type(s);
 	n->val = s;
 	n->next = NULL;
 	return (n);
 }
 
-int	add_back(t_val **n, char *s)
+static int	add_back(t_val **n, char *s)
 {
 	t_val	*tmp;
 
@@ -28,7 +29,7 @@ int	add_back(t_val **n, char *s)
 	return (0);
 }
 
-int	add_node(t_val **n, char *s) 
+static int	add_node(t_val **n, char *s) 
 {
 	if (!*n)
 	{
@@ -47,7 +48,6 @@ t_val*	parse(char **av)
 	t_val	*values;
 
 	values = NULL;
-	printf("Entered parsing\n");
 	while (*av)
 	{
 		if (add_node(&values, *av) != 0)
@@ -57,7 +57,5 @@ t_val*	parse(char **av)
 		}
 		av++;
 	}
-	for (t_val *tmp = values; tmp; tmp = tmp->next)
-		printf("Val :%s\n", tmp->val);
 	return (values);
 }

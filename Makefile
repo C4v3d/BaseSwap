@@ -3,6 +3,7 @@ CFILES_PATH =	src
 CFILES =	$(CFILES_PATH)/main.c \
 		$(CFILES_PATH)/io.c \
 		$(CFILES_PATH)/parse.c \
+		$(CFILES_PATH)/id_type.c \
 
 OBJ =		$(CFILES:$(CFILES_PATH)/%.c=$(BUILD_PATH)/%.o)
 

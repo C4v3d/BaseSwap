@@ -1,4 +1,7 @@
 #include "../include/baseswap.h"
+#include <stdbool.h>
+#include <string.h>
+#include <ctype.h>
 
 static bool	is_input_valid(char *s)
 {

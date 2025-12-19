@@ -1,27 +1,18 @@
 #ifndef BASESWAP_H
 # define BASESWAP_H
 
-#include <ctype.h>
-#include <string.h>
-#include <stdbool.h>
-#include <stdio.h>
+#include <stdlib.h>
 
 typedef struct	s_val t_val;
 
 #include "io.h"
 #include "parse.h"
+#include "id_type.h"
 
 #define MAXARG	10
 #define MAXSIZE	128
 #define CHARSET	"abcdefABCDEF"
 
-
-typedef enum e_type
-{
-	DEC,
-	HEX,
-	BIN,
-}	t_type;
 
 typedef struct s_val
 {
