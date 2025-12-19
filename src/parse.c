@@ -1,16 +1,63 @@
-#include "baseswap.h"
+#include "../include/baseswap.h"
+#include <stdlib.h>
 
-t_val	*parse(char **argv)
+t_val	*new_node(char *s)
 {
-//	t_val	*val;
-	// get data
-	// get type
-	// get len
-	(void)argv;
-	while (*argv)
+	t_val	*n;
+
+	n = malloc(sizeof(t_val));
+	if (!n)
+		return (NULL);
+	n->len = strlen(s);
+	// n->type = get_type(s);
+	n->val = s;
+	n->next = NULL;
+	return (n);
+}
+
+int	add_back(t_val **n, char *s)
+{
+	t_val	*tmp;
+
+	tmp = *n;
+	while (tmp->next)
+		tmp = tmp->next;
+	tmp->next = new_node(s);
+	if (!tmp->next)
+		return (1);
+	return (0);
+}
+
+int	add_node(t_val **n, char *s) 
+{
+	if (!*n)
 	{
-		printf("%s\n", *argv);
-		argv++;
+		*n = new_node(s);
+		if (!*n)
+			return (1);
 	}
-	return (NULL);
+	else
+		if (add_back(n, s) != 0)
+			return (1);
+	return (0);
+}
+
+t_val*	parse(char **av)
+{
+	t_val	*values;
+
+	values = NULL;
+	printf("Entered parsing\n");
+	while (*av)
+	{
+		if (add_node(&values, *av) != 0)
+		{
+			// clean and free
+			return (NULL);
+		}
+		av++;
+	}
+	for (t_val *tmp = values; tmp; tmp = tmp->next)
+		printf("Val :%s\n", tmp->val);
+	return (values);
 }

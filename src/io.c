@@ -1,4 +1,4 @@
-#include "baseswap.h"
+#include "../include/baseswap.h"
 
 static bool	is_input_valid(char *s)
 {
@@ -7,7 +7,6 @@ static bool	is_input_valid(char *s)
 	len = 0;
 	while (*s)
 	{
-		printf("%c\n", *s);
 		if (!isdigit(*s))
 			if (!strchr(CHARSET, *s))
 				return (false);
@@ -29,3 +28,4 @@ int	input_validation(char **args)
 	}
 	return (0);
 }
+

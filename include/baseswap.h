@@ -6,7 +6,6 @@
 #include <stdbool.h>
 #include <stdio.h>
 
-typedef enum	e_type t_type;
 typedef struct	s_val t_val;
 
 #include "io.h"

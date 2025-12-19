@@ -1,4 +1,4 @@
-#include "baseswap.h"
+#include "../include/baseswap.h"
 
 int	main(int ac, char **av)
 {
