@@ -12,5 +12,5 @@ void	baseswap(char **args)
 		perror("parser");
 		exit (errno);
 	}
-
+	process_nodes(values);
 }

@@ -9,6 +9,7 @@ typedef struct	s_val t_val;
 #include "parse.h"
 #include "id_type.h"
 #include "exec.h"
+#include "node_proc.h"
 
 #define MAXARG	10
 #define MAXSIZE	128
