@@ -1,6 +1,8 @@
 #ifndef PARSE_H
 # define PARSE_H
 
-t_val	*parse(char **argv);
+typedef struct	s_val t_val;
+
+t_val	*parse(char **av);
 
 #endif

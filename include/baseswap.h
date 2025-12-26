@@ -8,6 +8,7 @@ typedef struct	s_val t_val;
 #include "io.h"
 #include "parse.h"
 #include "id_type.h"
+#include "exec.h"
 
 #define MAXARG	10
 #define MAXSIZE	128

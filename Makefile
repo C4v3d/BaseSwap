@@ -1,8 +1,9 @@
 BUILD_PATH =	build
 CFILES_PATH =	src
 CFILES =	$(CFILES_PATH)/main.c \
-		$(CFILES_PATH)/io.c \
-		$(CFILES_PATH)/parse.c \
+		$(CFILES_PATH)/io_control/io.c \
+		$(CFILES_PATH)/parser/parse.c \
+		$(CFILES_PATH)/exec/exec.c \
 		$(CFILES_PATH)/id_type.c \
 
 OBJ =		$(CFILES:$(CFILES_PATH)/%.c=$(BUILD_PATH)/%.o)

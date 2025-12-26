@@ -1,6 +1,10 @@
-#include "../include/baseswap.h"
+#include "../../include/baseswap.h"
 #include <stdlib.h>
 #include <string.h>
+
+
+/** To remove */
+#include <stdio.h>
 
 static t_val	*new_node(char *s)
 {
@@ -43,7 +47,7 @@ static int	add_node(t_val **n, char *s)
 	return (0);
 }
 
-t_val*	parse(char **av)
+t_val	*parse(char **av)
 {
 	t_val	*values;
 

@@ -3,7 +3,6 @@
 
 int	main(int ac, char **av)
 {
-	(void)av;
 	if (ac == 1)
 	{
 		fprintf(stderr, "You must specify the base you want to convert to");
@@ -19,9 +18,11 @@ int	main(int ac, char **av)
 		// 	tokenization	
 		// main loop
 		if (input_validation(++av) == 0)
-			parse(av);
+		{
+			baseswap(av);
+		}
 		else
-			fprintf(stdout, "Wrong\n");
+			fprintf(stdout, "Input validation failed\n");
 	}
 	return (0);
 }
